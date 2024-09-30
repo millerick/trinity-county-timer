@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/trinity-county-timer/static/css/main.d59dff96.css",
+    "main.js": "/trinity-county-timer/static/js/main.604c54cf.js",
+    "static/js/453.940bc36d.chunk.js": "/trinity-county-timer/static/js/453.940bc36d.chunk.js",
+    "index.html": "/trinity-county-timer/index.html",
+    "main.d59dff96.css.map": "/trinity-county-timer/static/css/main.d59dff96.css.map",
+    "main.604c54cf.js.map": "/trinity-county-timer/static/js/main.604c54cf.js.map",
+    "453.940bc36d.chunk.js.map": "/trinity-county-timer/static/js/453.940bc36d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d59dff96.css",
+    "static/js/main.604c54cf.js"
+  ]
+}
