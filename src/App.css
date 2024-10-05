@@ -47,6 +47,7 @@ body {
 .box p {
   font-size: calc(8vh + 2vmin);
   margin: 0;
+  min-width: 110px;
 }
 
 .box-no-pad-side p {
@@ -82,10 +83,4 @@ body {
   justify-content: space-evenly;
   width: 100%;
   padding: 10px;
-}
-
-.settings {
-  position: absolute;
-  top: 0px;
-  right: 0px;
 }
