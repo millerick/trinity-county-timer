@@ -21,6 +21,11 @@ export const TimerDisplay = (props: TimerDisplayProps) => {
         </div>
       </div>
       <div className="col-4">
+        <div className="box-no-pad-side">
+          <p>:</p>
+        </div>
+      </div>
+      <div className="col-4">
         <div className="box">
           <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
           <span className="text">Seconds</span>
