@@ -45,18 +45,18 @@ body {
 }
 
 .box p {
-  font-size: calc(8vh + 2vmin);
+  font-size: calc(16vh + 2vmin);
   margin: 0;
-  min-width: 110px;
+  min-width: 200px;
 }
 
 .box-no-pad-side p {
-  font-size: calc(8vh + 2vmin);
+  font-size: calc(16vh + 2vmin);
   margin: 0;
 }
 
 .text {
-  font-size: 24px;
+  font-size: calc(2vh + 2vmin);
 }
 
 .timer-control-box {
