@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/trinity-county-timer/static/css/main.2a0f1a73.css",
-    "main.js": "/trinity-county-timer/static/js/main.56fdb9bd.js",
+    "main.css": "/trinity-county-timer/static/css/main.68603fe1.css",
+    "main.js": "/trinity-county-timer/static/js/main.690dc1c2.js",
     "static/js/453.940bc36d.chunk.js": "/trinity-county-timer/static/js/453.940bc36d.chunk.js",
     "index.html": "/trinity-county-timer/index.html",
-    "main.2a0f1a73.css.map": "/trinity-county-timer/static/css/main.2a0f1a73.css.map",
-    "main.56fdb9bd.js.map": "/trinity-county-timer/static/js/main.56fdb9bd.js.map",
+    "main.68603fe1.css.map": "/trinity-county-timer/static/css/main.68603fe1.css.map",
+    "main.690dc1c2.js.map": "/trinity-county-timer/static/js/main.690dc1c2.js.map",
     "453.940bc36d.chunk.js.map": "/trinity-county-timer/static/js/453.940bc36d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a0f1a73.css",
-    "static/js/main.56fdb9bd.js"
+    "static/css/main.68603fe1.css",
+    "static/js/main.690dc1c2.js"
   ]
 }
