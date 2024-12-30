@@ -11,7 +11,7 @@ export const TimerDisplay = (props: TimerDisplayProps) => {
   const seconds = props.seconds;
   const modulo = props.modulo % 2;
   let backgroundColor = undefined;
-  if (minutes === 0 && seconds === 0 && modulo == 0) {
+  if (minutes === 0 && seconds === 0 && modulo === 0) {
     backgroundColor = "rgba(255, 0, 0, 0.5)";
   } else if (minutes === 0) {
     backgroundColor = "rgba(255, 255, 0, 0.5)";
@@ -23,7 +23,6 @@ export const TimerDisplay = (props: TimerDisplayProps) => {
       <div className="col-4">
         <div className="box">
           <p id="minute">{minutes < 10 ? "0" + minutes : minutes}</p>
-          <span className="text">Minutes</span>
         </div>
       </div>
       <div className="col-4">
@@ -34,7 +33,6 @@ export const TimerDisplay = (props: TimerDisplayProps) => {
       <div className="col-4">
         <div className="box">
           <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
-          <span className="text">Seconds</span>
         </div>
       </div>
     </div>

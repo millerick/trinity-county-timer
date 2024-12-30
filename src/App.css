@@ -55,10 +55,6 @@ body {
   margin: 0;
 }
 
-.text {
-  font-size: calc(2vh + 2vmin);
-}
-
 .timer-control-box {
   display: flex;
   flex-direction: column;
