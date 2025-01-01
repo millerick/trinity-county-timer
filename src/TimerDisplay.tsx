@@ -1,4 +1,5 @@
 import React from 'react';
+import * as backgroundColorChanger from './backgroundColorChanger';
 
 interface TimerDisplayProps {
   minutes: number;
@@ -7,19 +8,17 @@ interface TimerDisplayProps {
 }
 
 export const TimerDisplay = (props: TimerDisplayProps) => {
+  const changeColor = backgroundColorChanger.useBackgroundStore((state: any) => state.changeColor);
   const minutes = props.minutes;
   const seconds = props.seconds;
   const modulo = props.modulo % 2;
-  let backgroundColor = undefined;
   if (minutes === 0 && seconds === 0 && modulo === 0) {
-    backgroundColor = "rgba(255, 0, 0, 0.5)";
+    changeColor(backgroundColorChanger.alertColor);
   } else if (minutes === 0) {
-    backgroundColor = "rgba(255, 255, 0, 0.5)";
+    changeColor(backgroundColorChanger.warningColor);
   }
   return (
-    <div className="timer" role="timer" style={{
-      backgroundColor,
-    }}>
+    <div className="timer" role="timer">
       <div className="col-4">
         <div className="box">
           <p id="minute">{minutes < 10 ? "0" + minutes : minutes}</p>
