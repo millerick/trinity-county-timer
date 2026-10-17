@@ -80,3 +80,18 @@ body {
   width: 100%;
   padding: 10px;
 }
+
+.control-button {
+  font-size: 1.25rem;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

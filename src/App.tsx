@@ -17,8 +17,8 @@ function App() {
   const minutes = parseInt(queryParams.get('minutes') || '3');
 
   return (
-    <div className='app' style={{ 
-      backgroundImage: `url(${process.env.PUBLIC_URL + getBackgroundImage()})` 
+    <div className='app' style={{
+      backgroundImage: `url(${import.meta.env.BASE_URL + getBackgroundImage()})`
     }}>
       <TimerControls timerStart={minutes}/>
     </div>

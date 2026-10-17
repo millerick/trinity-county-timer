@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-native';
 import { Timer } from './Timer';
 import { TimerDisplay } from './TimerDisplay';
 import * as backgroundColorChanger from './backgroundColorChanger';
@@ -33,8 +32,8 @@ export const TimerControls = (props: TimerControlProps) => {
           {countingDownFlag ? <Timer deadlineMinutes={minutes} /> : <TimerDisplay minutes={minutes} seconds={0} modulo={1} />}
         </div>
         <div className="controls">
-          <Button onPress={startCounting} title="Start" disabled={countingDownFlag} />
-          <Button onPress={resetCounting} title="Reset" />
+          <button className="control-button" onClick={startCounting} disabled={countingDownFlag}>Start</button>
+          <button className="control-button" onClick={resetCounting}>Reset</button>
         </div>
       </div>
     </div>
