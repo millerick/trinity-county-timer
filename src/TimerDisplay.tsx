@@ -8,15 +8,17 @@ interface TimerDisplayProps {
 }
 
 export const TimerDisplay = (props: TimerDisplayProps) => {
-  const changeColor = backgroundColorChanger.useBackgroundStore((state: any) => state.changeColor);
+  const changeColor = backgroundColorChanger.useBackgroundStore((state) => state.changeColor);
   const minutes = props.minutes;
   const seconds = props.seconds;
   const modulo = props.modulo % 2;
-  if (minutes === 0 && seconds === 0 && modulo === 0) {
-    changeColor(backgroundColorChanger.alertColor);
-  } else if (minutes === 0) {
-    changeColor(backgroundColorChanger.warningColor);
-  }
+  React.useEffect(() => {
+    if (minutes === 0 && seconds === 0 && modulo === 0) {
+      changeColor(backgroundColorChanger.alertColor);
+    } else if (minutes === 0) {
+      changeColor(backgroundColorChanger.warningColor);
+    }
+  }, [minutes, seconds, modulo, changeColor]);
   return (
     <div className="timer" role="timer">
       <div className="col-4">
