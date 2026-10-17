@@ -64,4 +64,51 @@ describe('Timer', () => {
     expect(secondsShown()).toBe('00');
     expect(useBackgroundStore.getState().backgroundColor).toBe(defaultBackgroundColor);
   });
+
+  test('pause freezes the countdown and resume shifts the deadline forward', () => {
+    const { rerender } = render(<Timer deadlineMinutes={1} />);
+
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+
+    expect(minutesShown()).toBe('00');
+    expect(secondsShown()).toBe('58');
+
+    rerender(<Timer deadlineMinutes={1} paused />);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(minutesShown()).toBe('00');
+    expect(secondsShown()).toBe('58');
+
+    rerender(<Timer deadlineMinutes={1} paused={false} />);
+    act(() => {
+      vi.advanceTimersByTime(1000);
+    });
+
+    expect(minutesShown()).toBe('00');
+    expect(secondsShown()).toBe('57');
+  });
+
+  test('pausing at zero keeps the display at zero after resume', () => {
+    const { rerender } = render(<Timer deadlineMinutes={1} />);
+
+    act(() => {
+      vi.advanceTimersByTime(61000);
+    });
+
+    expect(minutesShown()).toBe('00');
+    expect(secondsShown()).toBe('00');
+
+    rerender(<Timer deadlineMinutes={1} paused />);
+    rerender(<Timer deadlineMinutes={1} paused={false} />);
+    act(() => {
+      vi.advanceTimersByTime(1000);
+    });
+
+    expect(minutesShown()).toBe('00');
+    expect(secondsShown()).toBe('00');
+  });
 });

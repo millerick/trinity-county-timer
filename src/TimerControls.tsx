@@ -9,16 +9,25 @@ interface TimerControlProps {
 
 export const TimerControls = (props: TimerControlProps) => {
   const [countingDownFlag, setCountingDownFlag] = React.useState(false);
+  const [pausedFlag, setPausedFlag] = React.useState(false);
+  const [finishedFlag, setFinishedFlag] = React.useState(false);
   const [minutes, setMinutes] = React.useState(props.timerStart);
   const backgroundColor = backgroundColorChanger.useBackgroundStore((state) => state.backgroundColor);
   const changeColor = backgroundColorChanger.useBackgroundStore((state) => state.changeColor);
 
   function startCounting() {
     setCountingDownFlag(true);
+    setPausedFlag(false);
+  }
+
+  function pauseCounting() {
+    setPausedFlag(true);
   }
 
   function resetCounting() {
     setCountingDownFlag(false);
+    setPausedFlag(false);
+    setFinishedFlag(false);
     setMinutes(props.timerStart);
     changeColor(backgroundColorChanger.defaultBackgroundColor);
   }
@@ -29,10 +38,11 @@ export const TimerControls = (props: TimerControlProps) => {
         backgroundColor,
       }}>
         <div>
-          {countingDownFlag ? <Timer deadlineMinutes={minutes} /> : <TimerDisplay minutes={minutes} seconds={0} modulo={1} />}
+          {countingDownFlag ? <Timer deadlineMinutes={minutes} paused={pausedFlag} onFinish={() => setFinishedFlag(true)} /> : <TimerDisplay minutes={minutes} seconds={0} modulo={1} />}
         </div>
         <div className="controls">
-          <button className="control-button" onClick={startCounting} disabled={countingDownFlag}>Start</button>
+          <button className="control-button" onClick={startCounting} disabled={countingDownFlag && !pausedFlag}>Start</button>
+          <button className="control-button" onClick={pauseCounting} disabled={!countingDownFlag || pausedFlag || finishedFlag}>Pause</button>
           <button className="control-button" onClick={resetCounting}>Reset</button>
         </div>
       </div>
