@@ -10,8 +10,8 @@ interface TimerControlProps {
 export const TimerControls = (props: TimerControlProps) => {
   const [countingDownFlag, setCountingDownFlag] = React.useState(false);
   const [minutes, setMinutes] = React.useState(props.timerStart);
-  const backgroundColor = backgroundColorChanger.useBackgroundStore((state: any) => state.backgroundColor);
-  const changeColor = backgroundColorChanger.useBackgroundStore((state: any) => state.changeColor);
+  const backgroundColor = backgroundColorChanger.useBackgroundStore((state) => state.backgroundColor);
+  const changeColor = backgroundColorChanger.useBackgroundStore((state) => state.changeColor);
 
   function startCounting() {
     setCountingDownFlag(true);

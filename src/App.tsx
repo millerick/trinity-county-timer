@@ -14,7 +14,8 @@ function getBackgroundImage() {
 
 function App() {
   const queryParams = new URLSearchParams(window.location.search);
-  const minutes = parseInt(queryParams.get('minutes') || '3');
+  const parsed = parseInt(queryParams.get('minutes') || '', 10);
+  const minutes = Number.isNaN(parsed) ? 3 : parsed;
 
   return (
     <div className='app' style={{
